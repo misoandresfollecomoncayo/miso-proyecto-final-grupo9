@@ -1,5 +1,5 @@
 Universidad de los Andes<br/>
-Facultad de Ingeniería de Sistemas y Computación<br/>
+Departamento de Ingeniería de Sistemas y Computación<br/>
 Maestría en Ingeniería de Software<br/>
 Proyecto Final<br/>
 
