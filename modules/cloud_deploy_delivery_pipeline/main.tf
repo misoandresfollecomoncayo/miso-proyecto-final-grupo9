@@ -4,11 +4,7 @@ resource "google_clouddeploy_delivery_pipeline" "pipeline" {
 
     serial_pipeline {
         stages {
-        target_id = var.green_target
-        }
-
-        stages {
-        target_id = var.blue_target
+        target_id = var.cloud_run_target
 
         strategy {
             canary {
@@ -20,7 +16,7 @@ resource "google_clouddeploy_delivery_pipeline" "pipeline" {
 
             canary_deployment {
                 percentages = [10, 30, 60]
-                verify      = true
+                verify      = false
             }
             }
         }

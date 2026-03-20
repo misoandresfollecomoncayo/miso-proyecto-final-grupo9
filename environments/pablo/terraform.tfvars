@@ -11,6 +11,5 @@ project_id_gcp = "testproyectointegrador-488523"
 ###########################################################
 gh_repo = "test-cicd-devop"
 gh_branch = "main"
-container_name = "test-app"
 container_port = 8000
 gh_conn_name = "gh-conn" #En cloud build v2, se debe conectar a un host en la v2

@@ -18,10 +18,6 @@ variable "artifact_repo" {
     type = string
 }
 
-variable "container_name" {
-    type = string
-}
-
 variable "repository_id" {
     type = string
 }

@@ -15,7 +15,7 @@ resource "google_cloudbuild_trigger" "github_trigger" {
     substitutions = {
         _REGION         = var.region
         _ARTIFACT_REPO  = var.artifact_repo
-        _CONTAINER_NAME = var.container_name
+        _CONTAINER_NAME = var.project_name
         _CONTAINER_PORT = tostring(var.container_port)
         _PIPELINE_NAME  = var.pipeline_name
         _SERVICE_NAME   = var.service_name

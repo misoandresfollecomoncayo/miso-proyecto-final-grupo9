@@ -5,7 +5,11 @@ resource "google_cloud_run_service" "app_service" {
     template {
         spec {
             containers {
+                name = var.project_name
                 image = "us-docker.pkg.dev/cloudrun/container/hello"
+                ports {
+                    container_port = var.container_port
+                }
             }
         }
     }

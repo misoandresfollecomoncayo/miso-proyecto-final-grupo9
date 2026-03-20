@@ -10,10 +10,6 @@ variable "region" {
     type = string
 }
 
-variable "green_target" {
-    type = string
-}
-
-variable "blue_target" {
+variable "cloud_run_target" {
     type = string
 }

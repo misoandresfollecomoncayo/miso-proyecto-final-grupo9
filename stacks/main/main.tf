@@ -10,7 +10,7 @@ module "app_service" {
     project_name = var.project_name
     environment = var.environment
     region = var.region
-    port_container = 80
+    container_port = var.container_port
     ingress_type = "internal-and-cloud-load-balancing"
     security_type = "allUsers"
 }
@@ -24,22 +24,13 @@ module "neg_app_service" {
     endpoint_type = "SERVERLESS"
 }
 
-module "clouddeploy_target_blue" {
+module "clouddeploy_target_cloud_run" {
     source = "../../modules/cloud_deploy_targets"
     project_name = var.project_name
     environment = var.environment
     region = var.region
     project_id_gcp = var.project_id_gcp
-    canary_environment = "blue"
-}
-
-module "clouddeploy_target_green" {
-    source = "../../modules/cloud_deploy_targets"
-    project_name = var.project_name
-    environment = var.environment
-    region = var.region
-    project_id_gcp = var.project_id_gcp
-    canary_environment = "green"
+    canary_environment = "cloudrun"
 }
 
 module "clouddeploy_pipieline" {
@@ -47,8 +38,7 @@ module "clouddeploy_pipieline" {
     project_name = var.project_name
     environment = var.environment
     region = var.region
-    green_target = module.clouddeploy_target_green.target_name
-    blue_target = module.clouddeploy_target_blue.target_name
+    cloud_run_target = module.clouddeploy_target_cloud_run.target_name
 }
 
 module "cloudbuild_sa" {
@@ -74,7 +64,6 @@ module "cloudbuild_trigger" {
     project_name = var.project_name
     environment = var.environment
     region = var.region
-    container_name = var.project_name
     container_port = var.container_port
     gh_branch = var.gh_branch
     artifact_repo = module.artifact-registry.repo_name

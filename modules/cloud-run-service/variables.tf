@@ -10,7 +10,7 @@ variable "region" {
     type = string
 }
 
-variable "port_container" {
+variable "container_port" {
     type = number
 }
 
