@@ -37,3 +37,20 @@ variable "pipeline_name" {
 variable "service_name" {
     type = string
 }
+
+
+variable "ingress_type" {
+    type = string
+}
+
+variable "security_type" {
+    type = string
+}
+
+variable "health_check_url" {
+    type = string
+}
+
+variable "load_balancer_uri" {
+    type = string
+}

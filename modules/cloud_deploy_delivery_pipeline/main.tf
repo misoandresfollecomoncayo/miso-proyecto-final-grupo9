@@ -16,7 +16,7 @@ resource "google_clouddeploy_delivery_pipeline" "pipeline" {
 
             canary_deployment {
                 percentages = [10, 30, 60]
-                verify      = false
+                verify      = true
             }
             }
         }

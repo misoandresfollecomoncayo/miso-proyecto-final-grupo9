@@ -13,7 +13,3 @@ variable "region" {
 variable "project_id_gcp" {
     type = string
 }
-
-variable "service_name" {
-    type = string
-}

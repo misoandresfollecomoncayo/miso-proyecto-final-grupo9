@@ -21,10 +21,10 @@ resource "google_cloud_run_service" "app_service" {
     }
 }
 
-resource "google_cloud_run_service_iam_policy" "public_invoker" {
+resource "google_cloud_run_service_iam_member" "public_invoker" {
     location = google_cloud_run_service.app_service.location
     project  = google_cloud_run_service.app_service.project
     service  = google_cloud_run_service.app_service.name
-
-    policy_data = data.google_iam_policy.permission.policy_data
+    role = "roles/run.invoker"
+    member = var.security_type
 }

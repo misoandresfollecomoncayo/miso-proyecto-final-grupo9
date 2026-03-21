@@ -10,10 +10,18 @@ variable "region" {
     type = string
 }
 
-variable "project_id_gcp" {
+variable "pipeline_name" {
     type = string
 }
 
-variable "service_name" {
+variable "service_account_id" {
+    type = string
+}
+
+variable "cloud_deploy_target" {
+    type = string
+}
+
+variable "project_id_gcp" {
     type = string
 }
