@@ -1,2 +1,2 @@
-bucket  = "travelhub-project-prod-terraform-bucket"
+bucket  = "prod-travelhub-project-terraform-bucket"
 prefix     = "terraformiac/terraform.tfstate"

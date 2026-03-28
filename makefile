@@ -1,5 +1,5 @@
 #Project configuration
-PROJECT-ID := testproyectointegrador-488523
+PROJECT-ID=secret-lambda-491419-p2
 REGION=us-central1
 ZONE=us-central1-a
 #Terraform configuration
@@ -28,9 +28,6 @@ create-terraform:
 
 delete:
 	terraform -chdir="$(MAIN)" destroy -var-file="$(ENV)/terraform.tfvars"
-
-reset:
-	terraform -chdir="$(S3)" destroy -var-file="$(ENV)/terraform.tfvars"
 
 get-project:
 	gcloud config get-value project

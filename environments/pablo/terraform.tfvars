@@ -5,7 +5,7 @@ region = "us-central1"
 owner = "privera2505" #Github User
 project_name = "travelhub-project"
 environment = "prod"
-project_id_gcp = "testproyectointegrador-488523"
+project_id_gcp = "secret-lambda-491419-p2"
 ###########################################################
 # Cloud run Variables
 ###########################################################
